@@ -11,14 +11,14 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form method="POST" id="frm-login" >
           <div class="form-group">
             <label for="usuario">Usuario</label>
-            <input class="form-control" id="usuario" type="email" aria-describedby="emailHelp" placeholder="Usuario">
+            <input class="form-control" id="usuario" type="text" aria-describedby="emailHelp" placeholder="Usuario" autocomplete="off"  required>
           </div>
           <div class="form-group">
             <label for="contrasena">Contraseña</label>
-            <input class="form-control" id="contrasena" type="password" placeholder="Contraseña">
+            <input class="form-control" id="contrasena" type="password" placeholder="Contraseña" autocomplete="off" required>
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -26,7 +26,7 @@
                 <input class="form-check-input" type="checkbox"> Recordarme</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.php">Login</a>
+          <button type="submit" class="btn btn-primary btn-block" href="index.php">Login</button>
         </form>
         <div class="text-center">          
           <a class="d-block small mt-3" href="forgot-password.html">Forgot Password?</a>

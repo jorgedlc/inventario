@@ -1,8 +1,8 @@
 <?php
 
 
-	require_once('../../bd/conexion.php');
-	require_once('../entities/usuarios.entity.php');
+	require_once('bd/conexion.php');
+	require_once('models/entities/usuarios.entity.php');
 	
 	class UsuariosModel{
 		
@@ -36,6 +36,7 @@
 					$user->__SET('id_tipo_usuario', $fila->id_tipo_usuario);
 					$user->__SET('usuario', $fila->usuario);
 					$user->__SET('estado', $fila->estado);
+					$user->__SET('contrasena', $fila->contrasena);
 														
 					$result[]=$user;
 				}            
@@ -48,6 +49,8 @@
 		//Resive un objeto de tipo usuario 
 		public function login($usuario){
 			
+			
+
 			
 			$db=new Conexion_db();
 			
@@ -75,17 +78,21 @@
 					$usr->__SET('id_usuario', $fila->id_usuario);
 					$usr->__SET('nombre', $fila->nombre);
 					$usr->__SET('apellido', $fila->apellido);
-					$usr->__SET('estado', $fila->apellido);
+					$usr->__SET('estado', $fila->estado);
+					$usr->__SET('usuario',$fila->usuario);
+					$usr->__SET('contrasena',$fila->contrasena);
 					$usr->__SET('id_tipo_usuario', $fila->id_tipo_usuario);
 										
 				}            
-			}	
+			}
+			
+			
 
 			return $usr;
 		
 		}
 		
-		public function agregarUsuario($usuario){
+		public function agregarUsuario(){
 			
 			
 			
